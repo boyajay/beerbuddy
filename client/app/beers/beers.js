@@ -1,4 +1,4 @@
-angular.module('shortly.beers', [])
+angular.module('beer.beers', [])
 .controller('BeersController', function ($scope) {
 
 });

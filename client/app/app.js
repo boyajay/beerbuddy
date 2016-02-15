@@ -1,6 +1,6 @@
-angular.module('shortly', [
-  'shortly.beers',
-  'shortly.about',
+angular.module('beer', [
+  'beer.beers',
+  'beer.about',
   'ngRoute',
   'shortly.services',
   'shortly.links',

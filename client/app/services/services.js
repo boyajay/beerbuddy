@@ -1,5 +1,7 @@
 angular.module('shortly.services', [])
+.factory('BeerLists', function () {
 
+})
 .factory('Links', function ($http) {
   // Your code here
   var linksInstance = {
