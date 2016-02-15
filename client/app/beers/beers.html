@@ -18,6 +18,7 @@
       <select name="Select a Category..." class="col-md-3" ng-model="beerCat" ng-change="dropboxitemselected()">
         <!-- <div ng-repeat="product in products"> -->
         <option value="">Select a category...</option>
+        <option ng-repeat="cat in selection1" value="{{cat.path}}">{{cat.name}}</option>
         <option value="/category">Type</option>
         <option value="/location/region">Region</option>
         <!-- </div>  -->
