@@ -2,7 +2,7 @@ body {
   background-image: url('../assets/beer_bg.png');
   background-repeat: no-repeat;
   font-family: arial, sans-serif;
-  margin-left: 60px;
+  margin-left: 10%;
   margin-top: 10px;
   max-width: 100%;
 }
@@ -25,6 +25,11 @@ h1 {
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 3px;
   -webkit-text-stroke-color: black;
+}
+select {
+  color: #222222;
+  height: 30px;
+  background-color: orange;
 }
 
 .navigation {
@@ -168,6 +173,9 @@ input[type=url]:focus {
 
 .description{
   font-family: 'Palatino Linotype';
+  color: #333111;
+  font-size: 1.1em;
+  max-width: 70%;
 }
 
 .prompt {  
@@ -176,5 +184,6 @@ input[type=url]:focus {
   font-size: 1.3em;
   color: black;
 }
+
 
 
