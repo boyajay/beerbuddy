@@ -14,19 +14,33 @@
     <br>
     <!-- <select id = "roomMenu" class=" col-md-4 btn btn-warning  dropdown-toggle" onchange="app.roomSelect()">
         </select> -->
+    <div class="row">
+      <select name="Select a Category..." class="col-md-3" ng-model="beerCat" ng-change="dropboxitemselected()">
+        <!-- <div ng-repeat="product in products"> -->
+        <option value="">Select a category...</option>
+        <option value="/category">Type</option>
+        <option value="/location/region">Region</option>
+        <!-- </div>  -->
 
-    <select name="Select a Category...">
-      <!-- <div ng-repeat="product in products"> -->
-      <option value="hello">helloo</option>
-      <option value="hello">helloo</option>
-        <option value="{{products[0]}}">{{products[0]}}</option>
-      <!-- </div>  -->
+       <!--  <div><option value="volvo">Select a Category...</option>
+        <option value="saab">really really really really really long sentence</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option></div> -->
+      </select>
+      <select name="Select a Category..." class="col-md-3 dropdown2">
+        <!-- <div ng-repeat="product in products"> -->
+        <option value="/category">Type</option>
+        <option value="/location/region">Region</option>
+          <option value="{{products[0]}}">{{products[0]}}</option>
+        <!-- </div>  -->
 
-     <!--  <div><option value="volvo">Select a Category...</option>
-      <option value="saab">really really really really really long sentence</option>
-      <option value="mercedes">Mercedes</option>
-      <option value="audi">Audi</option></div> -->
-    </select>
+       <!--  <div><option value="volvo">Select a Category...</option>
+        <option value="saab">really really really really really long sentence</option>
+        <option value="mercedes">Mercedes</option>
+        <option value="audi">Audi</option></div> -->
+      </select>
+      <pre> cat1 is : {{beerCat}}</pre>
+    </div>
 
   </div>
 </div>

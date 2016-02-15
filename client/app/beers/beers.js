@@ -5,5 +5,6 @@ angular.module('beer.beers', [])
     $scope.dropboxitemselected = function () {
     	console.log("function called!");
         alert("drop box item selected");
-    }
+    };
+    // document.getElementById("mySelect").value
 });
