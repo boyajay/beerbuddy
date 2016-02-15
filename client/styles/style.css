@@ -178,6 +178,10 @@ input[type=url]:focus {
   max-width: 70%;
 }
 
+.dropdown2 {
+  margin-left: 20px;
+}
+
 .prompt {  
 
   font-family: 'Vidaloka', serif;
