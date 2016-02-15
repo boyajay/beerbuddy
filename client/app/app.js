@@ -13,6 +13,10 @@ angular.module('shortly', [
       templateUrl: 'app/beers/beers.html',
       controller: 'BeersController'
     })
+    .when('/about', {
+      templateUrl: 'app/about/about.html',
+      controller: 'AboutController'
+    })
     // .when('/signin', {
     //   templateUrl: 'app/auth/signin.html',
     //   controller: 'AuthController'
