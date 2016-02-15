@@ -1,35 +1,32 @@
 <div id='container' ng-controller="BeersController">
   <div id="BeersContainer">
+    <div class="navigation">
+      <ul>
+        <li><a href="#/beers" class="index selected">Select Beers</a></li>
+        <li><a href="#/about" class="create">About Beer</a></li>
+        <li><a href="javascript:void(0)" class="logout" ng-click="signout()">Logout</a></li>
+      </ul>
+    </div>
+    <br><br> 
     <div class="prompt">Create a selection of beers based on type, brand, region, and more! </div>
     <br>
     <div class="description">From the drop-down menu below, choose a category to see a selection of beer. <br> You can additionally type in a search to see any matches from the current list.</div>
+    <br>
+    <!-- <select id = "roomMenu" class=" col-md-4 btn btn-warning  dropdown-toggle" onchange="app.roomSelect()">
+        </select> -->
 
+    <select name="Select a Category...">
+      <!-- <div ng-repeat="product in products"> -->
+      <option value="hello">helloo</option>
+      <option value="hello">helloo</option>
+        <option value="{{products[0]}}">{{products[0]}}</option>
+      <!-- </div>  -->
 
-    
-    <div class ="description"></div>
-
-    <!-- <input type='text' ng-model='search ' placeholder='filter' />
-    <div class="links">
-    </br>
-      <div ng-repeat="entry in data.links | filter:search | orderBy: '-visits'">
-      </br>
-        <div class="link">
-          <img src="../../../assets/redirect_icon.png">
-          <div class="visits"><span class="count"></span>{{entry.visits}}</div>
-          <div class="title">{{entry.title}}</div>
-          <div class="original">{{entry.url}}</div>
-            <a ng-href="{{entry.base_url}}/{{entry.code}}">{{entry.base_url}}/{{entry.code}}</a> -->
-
-        <!-- <img src="../../../assets/redirect_icon.png">
-        <div class="info">
-          <div ng-repeat="entry in data"
-            <div class="visits"><span class="count">2</span>{{entry.visits}}</div>
-            <div class="title">xkcd: Hot Dogs</div>
-            <div class="original">http://www.xkcd.com</div>
-            <a href="http://localhost:4568/55ef2">http://localhost:4568/55ef2</a>
-         --><!-- </div>
-      </div>
-    </div> -->
+     <!--  <div><option value="volvo">Select a Category...</option>
+      <option value="saab">really really really really really long sentence</option>
+      <option value="mercedes">Mercedes</option>
+      <option value="audi">Audi</option></div> -->
+    </select>
 
   </div>
 </div>
