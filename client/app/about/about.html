@@ -1,9 +1,18 @@
 <div id='container' ng-controller="AboutController">
   <div id="AboutContainer">
-    <div class="prompt">Learn all about the different types of beers across the world.
+    <div class="navigation">
+      <ul>
+        <li><a href="#/beers" class="index">Select Beers</a></li>
+        <li><a href="#/about" class="selected">About Beer</a></li>
+        <li><a href="javascript:void(0)" class="logout" ng-click="signout()">Logout</a></li>
+      </ul>
     </div>
-    Beer style is a term used to differentiate and categorize beers by factors such as flavor, strength, ingredients, production method or origin. The flavor includes the degree of bitterness of a beer due to bittering agents such as hops, roasted barley, or herbs; it also includes the sweetness from the sugar present in the beer.
+    <br> <br> 
+    <div class="prompt">Learn about the different types of beers across the world.
+    </div>
+    <br>
     <div class="description">
+    Beer style is a term used to differentiate and categorize beers by factors such as flavor, strength, ingredients, production method or origin. The flavor includes the degree of bitterness of a beer due to bittering agents such as hops, roasted barley, or herbs; it also includes the sweetness from the sugar present in the beer.
     </div>
     <!-- <input type='text' ng-model='search ' placeholder='filter' />
     <div class="links">
