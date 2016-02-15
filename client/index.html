@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='shortly'>
+  <head>
+    <meta charset="utf-8" />
+    <title>Beer Buddy</title>
+    <link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+
+  </head>
+  <body>
+    <h1>BEER BUDDY</h1>
+    <div class="navigation">
+      <ul>
+        <li><a href="#/beers" class="index selected">Select Beers</a></li>
+        <li><a href="#/shorten" class="create">About Beer</a></li>
+        <li><a href="javascript:void(0)" class="logout" ng-click="signout()">Logout</a></li>
+      </ul>
+    </div>
+    <br>
+    <br>
+    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+    <div ng-view></div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="app/beers/beers.js"></script>
+    <script src="app/about/about.js"></script>
+    <script src="app/auth/auth.js"></script>
+    <script src="app/links/links.js"></script>
+    <script src="app/shorten/shorten.js"></script>
+    <script src="app/services/services.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+</html>
