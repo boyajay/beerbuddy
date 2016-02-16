@@ -10,11 +10,10 @@ var findUser = Q.nbind(User.findOne, User);
 var createUser = Q.nbind(User.create, User);
 
 module.exports = {
-  getBeer: function(dataObj){
-    brewdb.beer.getById("avMkil", {}, function (err, res){
-      console.log (res);
-      return res;
-    }); 
+  getBeerCats: function(req, res, next){
+    var result = brewdb.category.all(function (err, result){
+      return res.json(result);
+    });
   }
   //   http.get("http://api.brewerydb.com/v2/categories?key=31b3b48826470b8ee3ca36aabb7560ab", function(res) {
   //     //console.log(res);

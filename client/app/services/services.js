@@ -1,16 +1,19 @@
 angular.module('beer.services', [])
 .factory('BeerLists', function ($http) {
   var getList = function (path, dataObj){
+    console.log('dataObj being passed in is ', dataObj);
     path = path || '';
-    return $http({
-      method: 'GET',
-      url: '/api/getBeer'
-    })
-    .then(function (resp) {
-      console.log("resp.data is ", resp.data);
-      dataObj=resp.data;
-      return resp.data;
-    });
+    if (path === 'categories'){
+      return $http({
+        method: 'GET',
+        url: '/api/getBeerCats'
+      })
+      .then(function (resp) {
+        dataObj=resp;
+        console.log("!!!!!!!!!!!!!dataObj is ", dataObj); //took out resp.data from all resp 
+        return resp;
+      });
+    }
   };
     // $.ajax({
     //   url: 'http://api.brewerydb.com/v2/?key=31b3b48826470b8ee3ca36aabb7560ab',
