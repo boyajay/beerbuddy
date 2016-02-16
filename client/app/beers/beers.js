@@ -6,11 +6,13 @@ angular.module('beer.beers', [])
       {path: '/breweries', name: 'by brewery'}
     ];
     $scope.selection2;
+    $scope.dataObj;
  		
  		$scope.getSelect1 = function (selectUrl) {
       console.log('selected category url is ', selectUrl);
-      $scope.selection2 = BeerLists.getList(selectUrl);
+      $scope.selection2 = BeerLists.getList(selectUrl, $scope.dataObj);
       console.log("returned result is ",   $scope.selection2);
+      console.log("or returned result is ",   $scope.dataObj);
  		};
     $scope.dropboxitemselected = function () {
     	console.log("function called!");

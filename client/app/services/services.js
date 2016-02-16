@@ -1,18 +1,28 @@
 angular.module('beer.services', [])
 .factory('BeerLists', function ($http) {
-  var getList = function (path){
+  var getList = function (path, dataObj){
     path = path || '';
-    $.ajax({
-      url: 'http://api.brewerydb.com/v2/?key=31b3b48826470b8ee3ca36aabb7560ab',
-      type: 'GET',
-      success: function(data) {
-        // Don't bother if we have nothing to work with
-        console.log(data);
-      },
-      error: function(data) {
-        console.error('Failed to fetch beers');
-      }
+    return $http({
+      method: 'GET',
+      url: '/api/getBeer'
+    })
+    .then(function (resp) {
+      console.log("resp.data is ", resp.data);
+      dataObj=resp.data;
+      return resp.data;
     });
+  };
+    // $.ajax({
+    //   url: 'http://api.brewerydb.com/v2/?key=31b3b48826470b8ee3ca36aabb7560ab',
+    //   type: 'GET',
+    //   success: function(data) {
+    //     // Don't bother if we have nothing to work with
+    //     console.log(data);
+    //   },
+    //   error: function(data) {
+    //     console.error('Failed to fetch beers');
+    //   }
+    // });
 
     // $http({
     //   method: 'GET',
@@ -29,7 +39,6 @@ angular.module('beer.services', [])
     //     // called asynchronously if an error occurs
     //     // or server returns response with an error status.
     //   });
-  }
   return {
     getList: getList
   }
