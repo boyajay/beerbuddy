@@ -10,6 +10,16 @@ angular.module('beer.services', [])
     })
     .then(callback);
   };
+  var getSelectedList = function (path, callback){
+    console.log('path being passed in is ', path);
+    path = path || '';
+    return $http({
+      method: 'GET',
+      params: {params: path},
+      url: '/api/getBeerCats'
+    })
+    .then(callback);
+  };
     // $.ajax({
     //   url: 'http://api.brewerydb.com/v2/?key=31b3b48826470b8ee3ca36aabb7560ab',
     //   type: 'GET',

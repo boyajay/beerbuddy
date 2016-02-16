@@ -5,15 +5,31 @@ angular.module('beer.beers', [])
       {path: '/locations/:region', name: 'by region'},
       {path: '/breweries', name: 'by brewery'}
     ];
+    $scope.describe = '';
     $scope.selection2 = [];
-    $scope.dataObj = "in the scope";
+    $scope.selectedList;
  		
  		$scope.getSelect1 = function (selectUrl) {
+      selectUrl = selectUrl+'?';
       console.log('selected category url is ', selectUrl);
-      BeerLists.getList(selectUrl, function(data){
-          $scope.selection2 = data;
+      BeerLists.getList(selectUrl, function(resp){
+          $scope.selection2 = JSON.parse(resp.data).data;
+          console.log($scope.selection2);
       });
     };
+    $scope.getSelectedList = function (cat1, cat2){
+      var path = "/beers?styleId="+cat2 + "&";
+      console.log('selected path is ', path);
+      BeerLists.getList(path, function(resp){
+          $scope.selectedList = JSON.parse(resp.data).data;
+          console.log($scope.selectedList);
+          $scope.describe = $scope.selectedList[0].style.description;
+          console.log($scope.describe);
+
+      });
+
+
+    }
       
       // .then(function(val){console.log(val);
       //   $scope.dataObj = val;

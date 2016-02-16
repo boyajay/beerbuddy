@@ -4,7 +4,7 @@
       <ul>
         <li><a href="#/beers" class="index selected">Select Beers</a></li>
         <li><a href="#/about" class="create">About Beer</a></li>
-        <li><a href="#/myLists" class="selected">My Lists</a></li>
+        <li><a href="#/myLists">My Lists</a></li>
         <li><a href="javascript:void(0)" class="logout" ng-click="signout()">Logout</a></li>
       </ul>
     </div>
@@ -20,16 +20,32 @@
         <option value="/category">Type</option>
         <option value="/location/region">Region</option>
       </select>
-      <select name="Select2" class="col-md-3 dropdown2">
-        <!-- <div ng-repeat="product in products"> -->
-        <option ng-repeat="cat in selection2" value="{{cat.path}}">{{cat.name}}</option>
-        <option value="/category">Type</option>
-        <option value="/location/region">Region</option>
-      </select>
-      <pre> cat1 is : {{beerCat}}
-      cat2 is  : {{selection2}}
-      </pre>
-    </div>
 
+       <select name="Select2" class="col-md-3 dropdown2" ng-model="choice2" ng-change="getSelectedList(beerCat, choice2)">
+        <option value="">Sort by...</option>
+        <option ng-repeat="cat in selection2" value="{{cat.id}}">{{cat.name}}</option>
+      </select>
+    </div>
+    <br> <br>
+    <div class="displayResults row">
+      <div class="beerDescription col-md-5">
+        <span style= "font-weight: bolder; font-size: 1.2em ">About your selection:</span>
+        <br>  
+        {{describe}}
+      </div>
+      <div class="beerList col-md-6">
+        <span style= "font-weight: bolder; font-size: 1.2em"> Results of your selections: </span>
+        <ul style="list-style: none">
+          <li ng-repeat="beer in selectedList">
+            <span class="beerName" style= "font-weight: bolder; color: brown"> name: {{beer.name}} </span><br>
+            <span class="beerDiscrip" style= "font-weight: bold; padding-left:2em">Alcohol Content: </span>{{beer.abv}}% <br>
+            <span class="beerDiscrip" style= "font-weight: bold; padding-left:2em"> Availability: </span> {{beer.available.description}}% 
+
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
   </div>
+
 </div>
