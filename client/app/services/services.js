@@ -3,7 +3,7 @@ angular.module('beer.services', [])
   var getList = function (path){
     path = path || '';
     $.ajax({
-      url: 'http://api.brewerydb.com/v2'+path+'/?key=31b3b48826470b8ee3ca36aabb7560ab',
+      url: 'http://api.brewerydb.com/v2/?key=31b3b48826470b8ee3ca36aabb7560ab',
       type: 'GET',
       success: function(data) {
         // Don't bother if we have nothing to work with
