@@ -17,7 +17,7 @@ module.exports = {
   //   });
   // }
 
-    var url = "http://api.brewerydb.com/v2" + req.query.params + "?key=31b3b48826470b8ee3ca36aabb7560ab"
+    var url = "http://api.brewerydb.com/v2" + req.query.params + "key=31b3b48826470b8ee3ca36aabb7560ab"
     console.log("url::::::::::: ", url );
     request(url, function(error, response, body) {
       //console.log(res);
