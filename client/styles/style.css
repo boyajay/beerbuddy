@@ -1,6 +1,7 @@
 body {
   background-image: url('../assets/beer_bg.png');
   background-repeat: no-repeat;
+  background-size: 100% 1725px;
   font-family: arial, sans-serif;
   margin-left: 10%;
   margin-top: 10px;
@@ -30,6 +31,11 @@ select {
   color: #222222;
   height: 30px;
   background-color: orange;
+}
+
+.graph {
+  width: 112%;
+  margin-left: -12%;
 }
 
 .navigation {
