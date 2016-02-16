@@ -2,12 +2,22 @@ angular.module('beer', [
   'beer.beers',
   'beer.about',
   'ngRoute',
-  'shortly.services',
+  'beer.services',
   'shortly.links',
   'shortly.shorten',
   'shortly.auth'
 ])
+// .all('*', function (request, response, next) {
+//         response.header("Access-Control-Allow-Origin", "*");
+//         response.header("Access-Control-Allow-Headers", "X-Requested-With");
+//         response.header("Access-Control-Allow-Methods", "GET, POST", "PUT", "DELETE");
+//         next();
+
+// })
 .config(function ($routeProvider, $httpProvider) {
+  $httpProvider.defaults.useXDomain = true;
+  $httpProvider.defaults.withCredentials = true;
+  delete $httpProvider.defaults.headers.common['X-Requested-With'];
   $routeProvider
     .when('/beers', {
       templateUrl: 'app/beers/beers.html',
@@ -42,7 +52,7 @@ angular.module('beer', [
 
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
-    $httpProvider.interceptors.push('AttachTokens');
+    // $httpProvider.interceptors.push('AttachTokens');
 })
 .factory('AttachTokens', function ($window) {
   // this is an $httpInterceptor
@@ -74,4 +84,4 @@ angular.module('beer', [
       $location.path('/signin');
     }
   });
-});
+})

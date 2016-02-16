@@ -13,7 +13,7 @@
     <div class="description">From the drop-down menu below, choose a category to see a selection of beer. <br> You can additionally type in a search to see any matches from the current list.</div>
     <br>
     <div class="row">
-      <select name="Select a Category..." class="col-md-3" ng-model="beerCat" ng-change="dropboxitemselected()">
+      <select name="Select a Category..." class="col-md-3" ng-model="beerCat" ng-change="getSelect1(beerCat)">
         <option value="">Select a category...</option>
         <option ng-repeat="cat in selection1" value="{{cat.path}}">{{cat.name}}</option>
         <option value="/category">Type</option>
