@@ -17,8 +17,6 @@
       <select name="Select1" class="col-md-3" ng-model="beerCat" ng-change="getSelect1(beerCat)">
         <option value="">Select a category...</option>
         <option ng-repeat="cat in selection1" value="{{cat.path}}">{{cat.name}}</option>
-        <option value="/category">Type</option>
-        <option value="/location/region">Region</option>
       </select>
 
        <select name="Select2" class="col-md-3 dropdown2" ng-model="choice2" ng-change="getSelectedList(beerCat, choice2)">
@@ -37,7 +35,10 @@
         <span style= "font-weight: bolder; font-size: 1.2em"> Results of your selections: </span>
         <ul style="list-style: none">
           <li ng-repeat="beer in selectedList">
-            <span class="beerName" style= "font-weight: bolder; color: brown"> name: {{beer.name}} </span><br>
+            <span class="beerName" style= "font-weight: bolder; color: brown"> name: {{beer.name}} 
+              <img src="../../assets/gift.png" style="width: 10px; height: 10px" ng-click="addWish(beer.name)"></img>
+              <img src="../../assets/heart-small.png" style="width: 20px; height: 20px" ng-click="addFav(beer.name)"></img>
+            </span> <br>
             <span class="beerDiscrip" style= "font-weight: bold; padding-left:2em">Alcohol Content: </span>{{beer.abv}}% <br>
             <span class="beerDiscrip" style= "font-weight: bold; padding-left:2em"> Availability: </span> {{beer.available.description}}% 
 
