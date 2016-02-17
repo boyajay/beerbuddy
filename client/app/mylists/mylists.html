@@ -14,11 +14,17 @@
     <div class="col-md-5">
     My Wishlist
       <ul>
+        <li ng-repeat="beer in data.wishlist" style="font-size: 1em; font-weight: normal; color: #222333">
+        {{beer}}
+        </li>
       </ul>
     </div>
     <div class="col-md-5">
     My Favorites
       <ul>
+        <li ng-repeat="beer in data.favorites" style="font-size: 1em; font-weight: normal; color: #222333"> 
+        {{beer}}
+        </li>
       </ul>
     </div>
     <div class= "col-md-1"></div>
