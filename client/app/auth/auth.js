@@ -10,7 +10,7 @@ angular.module('beer.auth', [])
     Auth.signin($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
+        $location.path('/beers');
       })
       .catch(function (error) {
         console.error(error);
@@ -21,7 +21,7 @@ angular.module('beer.auth', [])
     Auth.signup($scope.user)
       .then(function (token) {
         $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
+        $location.path('/beers');
       })
       .catch(function (error) {
         console.error(error);
