@@ -17,17 +17,12 @@ module.exports = {
   //   });
   // }
 
-    var url = "http://api.brewerydb.com/v2" + req.query.params + "key=31b3b48826470b8ee3ca36aabb7560ab"
+    var url = "http://api.brewerydb.com/v2" + req.query.params + "key=6e28403bdda7e4fe5afbab08bbc77475"
     console.log("url::::::::::: ", url );
     request(url, function(error, response, body) {
       //console.log(res);
       console.log(body);
       res.json(body);
     });
-    // .then(function(val) {
-    //   console.log("getBeer occured, value is ", val);
-    //   res.json(val);
-    // });
-  // }
   }
 } 

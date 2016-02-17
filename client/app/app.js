@@ -5,7 +5,8 @@ angular.module('beer', [
   'beer.services',
   'shortly.links',
   'shortly.shorten',
-  'shortly.auth'
+  'beer.auth',
+  'beer.mylists'
 ])
 // .all('*', function (request, response, next) {
 //         response.header("Access-Control-Allow-Origin", "*");
@@ -27,26 +28,20 @@ angular.module('beer', [
       templateUrl: 'app/about/about.html',
       controller: 'AboutController'
     })
-    // .when('/signin', {
-    //   templateUrl: 'app/auth/signin.html',
-    //   controller: 'AuthController'
-    // })
-    // .when('/signup', {
-    //   templateUrl: 'app/auth/signup.html',
-    //   controller: 'AuthController'
-    // })
-    // .when('/links', {
-    //   templateUrl: 'app/links/links.html',
-    //   controller: 'LinksController',
-    //   authenticate: true
-    // })
-    // .when('/shorten', {
-    //   templateUrl: 'app/shorten/shorten.html',
-    //   controller: 'ShortenController',
-    //   authenticate: true
-    // })
+    .when('/myLists', {
+      templateUrl: 'app/mylists/mylists.html',
+      controller: 'ListsController'
+    })
+    .when('/signin', {
+      templateUrl: 'app/auth/signin.html',
+      controller: 'AuthController'
+    })
+    .when('/signup', {
+      templateUrl: 'app/auth/signup.html',
+      controller: 'AuthController'
+    })
     .otherwise({
-      redirectTo: '/index'
+      redirectTo: '/beers'
       });
     // Your code here
 
