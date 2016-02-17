@@ -1,5 +1,7 @@
 angular.module('beer.services', [])
 .factory('BeerLists', function ($http) {
+  var  favorites= [];
+    var  wishlist= [];
   var getList = function (path, callback){
     console.log('path being passed in is ', path);
     path = path || '';
@@ -24,7 +26,12 @@ angular.module('beer.services', [])
     getList: getList
   }
 })
-// .factory('Links', function ($http) {
+.factory('Data', function () {
+  return{
+    favorites: [],
+    wishlist: []
+  }
+})
 //   // Your code here
 //   var linksInstance = {
 //     getAll: function (){

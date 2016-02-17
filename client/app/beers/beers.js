@@ -1,5 +1,5 @@
 angular.module('beer.beers', [])
-.controller('BeersController', function ($scope, BeerLists) {
+.controller('BeersController', function ($scope, BeerLists, Data) {
     $scope.selection1 =[
       {path: '/categories', name: 'by beer type'},
       {path: '/locations/:region', name: 'by region'},
@@ -8,6 +8,18 @@ angular.module('beer.beers', [])
     $scope.describe = '';
     $scope.selection2 = [];
     $scope.selectedList;
+    $scope.data = Data;
+
+    $scope.addWish = function(name){
+      $scope.data.wishlist.push(name);
+      console.log('wishlist is ', $scope.data.wishlist);
+    }
+
+    $scope.addFav = function(name){
+      $scope.data.favorites.push(name);
+      console.log('favs is ', $scope.data.favorites);
+
+    }
  		
  		$scope.getSelect1 = function (selectUrl) {
       selectUrl = selectUrl+'?';
