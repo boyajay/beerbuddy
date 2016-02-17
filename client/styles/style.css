@@ -33,9 +33,20 @@ select {
   background-color: orange;
 }
 
+.beerName img {
+  margin-bottom:3px;
+  margin-left:5px;
+}
+
 .graph {
   width: 112%;
   margin-left: -12%;
+}
+
+.login {
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 .navigation {
