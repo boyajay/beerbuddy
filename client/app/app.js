@@ -3,8 +3,6 @@ angular.module('beer', [
   'beer.about',
   'ngRoute',
   'beer.services',
-  'shortly.links',
-  'shortly.shorten',
   'beer.auth',
   'beer.mylists'
 ])

@@ -2,7 +2,6 @@ var Link = require('./linkModel.js');
     Q = require('q');
     util = require('../config/utils.js');
 
-// Promisify a few mongoose methods with the `q` promise library
 var findLink = Q.nbind(Link.findOne, Link);
 var createLink = Q.nbind(Link.create, Link);
 var findAllLinks = Q.nbind(Link.find, Link);
