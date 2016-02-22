@@ -1,5 +1,5 @@
 angular.module('beer.beers', [])
-.controller('BeersController', function ($scope, BeerLists, Data) {
+.controller('BeersController', function ($scope, $window, BeerLists, Data, Auth) {
     $scope.selection1 =[
       {path: '/categories', name: 'by beer type'},
       {path: '/locations/:region', name: 'by region'},
@@ -11,6 +11,8 @@ angular.module('beer.beers', [])
     $scope.data = Data;
 
     $scope.addWish = function(name){
+      var user = $scope.user.username;
+
       $scope.data.wishlist.push(name);
       console.log('wishlist is ', $scope.data.wishlist);
     }
@@ -37,9 +39,12 @@ angular.module('beer.beers', [])
           console.log($scope.selectedList);
           $scope.describe = $scope.selectedList[0].style.description;
           console.log($scope.describe);
-
       });
+    }
 
+    $scope.signout = function(){
+      console.log('signing out');
+      Auth.signout();
 
     }
       

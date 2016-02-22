@@ -2,7 +2,7 @@ angular.module('beer.services', [])
 .factory('BeerLists', function ($http) {
   var  favorites= [];
     var  wishlist= [];
-  var getList = function (path, callback){
+  var getList = function (path, callback) {
     console.log('path being passed in is ', path);
     path = path || '';
     return $http({
@@ -12,7 +12,7 @@ angular.module('beer.services', [])
     })
     .then(callback);
   };
-  var getSelectedList = function (path, callback){
+  var getSelectedList = function (path, callback) {
     console.log('path being passed in is ', path);
     path = path || '';
     return $http({
@@ -24,7 +24,28 @@ angular.module('beer.services', [])
   };
   return {
     getList: getList
-  }
+  };
+  var addToFav = function (user, beer, callback) {
+    return $http({
+      method: 'POST',
+      params: {listType: 'favorites',
+              username: user,
+              beer: beer},
+      url: '/api/addToList'
+    })
+    .then(callback);
+  };
+
+  var addToWish = function (user, beer,  callback) {
+    return $http({
+      method: 'POST',
+      params: {listType: 'wishlist',
+              username: user,
+              beer: beer},
+      url: '/api/addToList'
+    })
+    .then(callback);
+  };
 })
 .factory('Data', function () {
   return{
@@ -34,7 +55,7 @@ angular.module('beer.services', [])
 })
 //   // Your code here
 //   var linksInstance = {
-//     getAll: function (){
+//     getAll: function () {
 //       return $http({
 //       method: 'GET',
 //       url: '/api/links'
@@ -45,7 +66,7 @@ angular.module('beer.services', [])
 //     });
 //     },
 
-//     addOne: function (data){
+//     addOne: function (data) {
 //       var obj = { url: data };
 //       return $http.post('/api/links', obj)
 //       .then(function (resp) {
@@ -90,6 +111,7 @@ angular.module('beer.services', [])
       return resp.data.token;
     });
   };
+
 
   var isAuth = function () {
     return !!$window.localStorage.getItem('com.shortly');
