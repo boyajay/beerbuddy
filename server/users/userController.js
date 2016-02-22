@@ -23,17 +23,19 @@ module.exports = {
 
   addToList: function(req, res, next){
     console.log('LISTTYPE IS ---------------', req.query.listType);
+    console.log('USERNAME IS ---------------', req.query.username);
     if (req.query.listType === 'wishlist'){
-      updateUser({'name':req.query.name}, {$push: {wishlist: req.query.beer}});    
+      updateUser({username:req.query.username}, {$push: {wishlist: req.query.beer}});    
       res.end();
     } else {
-      updateUser({'name':req.query.name}, {$push: {favorites: req.query.beer}});
+      updateUser({username:req.query.username}, {$push: {favorites: req.query.beer}});
       res.end();
     }
   },
 
   getLists: function(req, res, next){
-    findUser({'name':req.query.name})
+    console.log('requested name is ', req.query.username);
+    findUser({username:req.query.username})
     .then(function (doc) {
       res.json(doc);
     });

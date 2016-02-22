@@ -43,6 +43,11 @@ select {
   cursor: url(../assets/grab.png), default;
 }
 
+.beerListing {
+  height: 800px;
+  overflow: scroll;
+}
+
 .graph {
   width: 112%;
   margin-left: -12%;

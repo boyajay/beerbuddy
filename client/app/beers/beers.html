@@ -33,7 +33,7 @@
       </div>
       <div class="beerList col-md-6">
         <span style= "font-weight: bolder; font-size: 1.2em"> Results of your selections: </span>
-        <ul style="list-style: none">
+        <ul class = "beerListing" style="list-style: none">
           <li ng-repeat="beer in selectedList">
             <span class="beerName" style= "font-weight: bolder; color: brown"> name: {{beer.name}} 
               <img src="../../assets/gift.png" style="width: 10px; height: 10px" ng-click="addWish(beer.name)"></img>

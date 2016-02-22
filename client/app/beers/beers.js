@@ -12,11 +12,13 @@ angular.module('beer.beers', [])
 
     $scope.addWish = function(name){
       var user = $window.localStorage.user;
+      console.log('adding wish for user ', user);
       BeerLists.addToWish(user, name, function(val){console.log(val)});
     };   
 
     $scope.addFav = function(name){
       var user = $window.localStorage.user;
+      console.log('adding wish for user ', user);
       BeerLists.addToFav(user, name, function(val){console.log(val)});
     };
  		
