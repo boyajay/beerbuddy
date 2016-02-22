@@ -39,6 +39,10 @@ select {
   cursor: pointer;
 }
 
+.beerName img:active {
+  cursor: url(../assets/grab.png), default;
+}
+
 .graph {
   width: 112%;
   margin-left: -12%;
