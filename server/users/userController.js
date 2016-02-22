@@ -21,17 +21,17 @@ module.exports = {
     });
   },
 
-  addfav: function(req, res, next){
-    updateUser({'name':req.query.name}, {$push: {favorites: req.query.beer}});
-    res.end();
+  addToList: function(req, res, next){
+    if (req.query.listType === 'wishlist'){
+      updateUser({'name':req.query.name}, {$push: {wishlist: req.query.beer}});    
+      res.end();
+    } else {
+      updateUser({'name':req.query.name}, {$push: {favorites: req.query.beer}});
+      res.end();
+    }
   },
 
-  addWish: function(req, res, next){
-    updateUser({'name':req.query.name}, {$push: {wishlist: req.query.beer}});    
-    res.end();
-  },
-
-  addWish: function(req, res, next){
+  getLists: function(req, res, next){
     findUser({'name':req.query.name})
     .then(function (doc) {
       res.json(doc);
