@@ -2,8 +2,8 @@ angular.module('beer.beers', [])
 .controller('BeersController', function ($scope, $window, BeerLists, Data, Auth) {
     $scope.selection1 = [
       {path: '/categories', name: 'by beer type'},
-      {path: '/locations/:region', name: 'by region'},
-      {path: '/breweries', name: 'by brewery'}
+      {path: '/', name: 'coming soon'},
+      {path: '/', name: 'coming soon'}
     ];
     $scope.describe = '';
     $scope.selection2 = [];
