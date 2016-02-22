@@ -1,6 +1,6 @@
 angular.module('beer.beers', [])
 .controller('BeersController', function ($scope, $window, BeerLists, Data, Auth) {
-    $scope.selection1 =[
+    $scope.selection1 = [
       {path: '/categories', name: 'by beer type'},
       {path: '/locations/:region', name: 'by region'},
       {path: '/breweries', name: 'by brewery'}
@@ -39,13 +39,11 @@ angular.module('beer.beers', [])
           $scope.describe = $scope.selectedList[0].style.description;
           console.log($scope.describe);
       });
-    }
-
+    };
     $scope.signout = function(){
       console.log('signing out');
       Auth.signout();
-
-    }
+    };
       
       // .then(function(val){console.log(val);
       //   $scope.dataObj = val;
