@@ -22,12 +22,20 @@ module.exports = {
   },
 
   addfav: function(req, res, next){
-    updateUser
-
+    updateUser({'name':req.query.name}, {$push: {favorites: req.query.beer}});
+    res.end();
   },
 
   addWish: function(req, res, next){
-    
+    updateUser({'name':req.query.name}, {$push: {wishlist: req.query.beer}});    
+    res.end();
+  },
+
+  addWish: function(req, res, next){
+    findUser({'name':req.query.name})
+    .then(function (doc) {
+      res.json(doc);
+    });
   },
   
   signin: function (req, res, next) {
