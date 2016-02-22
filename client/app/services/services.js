@@ -12,19 +12,6 @@ angular.module('beer.services', [])
     })
     .then(callback);
   };
-  var getSelectedList = function (path, callback) {
-    console.log('path being passed in is ', path);
-    path = path || '';
-    return $http({
-      method: 'GET',
-      params: {params: path},
-      url: '/api/getBeerCats'
-    })
-    .then(callback);
-  };
-  return {
-    getList: getList
-  };
   var addToFav = function (user, beer, callback) {
     return $http({
       method: 'POST',
@@ -36,15 +23,34 @@ angular.module('beer.services', [])
     .then(callback);
   };
 
-  var addToWish = function (user, beer,  callback) {
+  var addToWish = function (user,  callback) {
     return $http({
       method: 'POST',
-      params: {listType: 'wishlist',
-              username: user,
-              beer: beer},
-      url: '/api/addToList'
+      params: {
+                listType: 'wishlist',
+                username: user,
+                beer: beer
+              },
+      url: '/api/users/addToList'
     })
     .then(callback);
+  };
+
+  var getLists = function (user, callback) {
+    return $http({
+      method: 'GET',
+      params: {
+                username: user
+              },
+      url: '/api/users/getLists'
+    })
+    .then(callback);
+  };
+  return {
+    getList: getList,
+    getLists: getLists,
+    addToFav: addToFav,
+    addToWish: addToWish
   };
 })
 .factory('Data', function () {
