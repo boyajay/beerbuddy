@@ -9,6 +9,7 @@ module.exports = function (app, express) {
   app.get('/api/users/signedin', userController.checkAuth);
   app.get('/api/users/logout', userController.checkAuth);
   app.get('/api/users/addToList', userController.addToList);
+  app.get('/api/users/getLists', userController.getLists);
   
   app.use(helpers.errorLogger);
   app.use(helpers.errorHandler);
