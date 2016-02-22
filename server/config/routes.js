@@ -8,7 +8,7 @@ module.exports = function (app, express) {
   app.post('/api/users/signup', userController.signup);
   app.get('/api/users/signedin', userController.checkAuth);
   app.get('/api/users/logout', userController.checkAuth);
-  app.get('/api/users/addToList', userController.addToList);
+  app.post('/api/users/addToList', userController.addToList);
   app.get('/api/users/getLists', userController.getLists);
   
   app.use(helpers.errorLogger);

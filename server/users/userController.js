@@ -22,6 +22,7 @@ module.exports = {
   },
 
   addToList: function(req, res, next){
+    console.log('LISTTYPE IS ---------------', req.query.listType);
     if (req.query.listType === 'wishlist'){
       updateUser({'name':req.query.name}, {$push: {wishlist: req.query.beer}});    
       res.end();

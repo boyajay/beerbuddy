@@ -11,17 +11,14 @@ angular.module('beer.beers', [])
     $scope.data = Data;
 
     $scope.addWish = function(name){
-      var user = $scope.user.username;
-
-      $scope.data.wishlist.push(name);
-      console.log('wishlist is ', $scope.data.wishlist);
-    }
+      var user = $window.localStorage.user;
+      BeerLists.addToWish(user, name, function(val){console.log(val)});
+    };   
 
     $scope.addFav = function(name){
-      $scope.data.favorites.push(name);
-      console.log('favs is ', $scope.data.favorites);
-
-    }
+      var user = $window.localStorage.user;
+      BeerLists.addToFav(user, name, function(val){console.log(val)});
+    };
  		
  		$scope.getSelect1 = function (selectUrl) {
       selectUrl = selectUrl+'?';

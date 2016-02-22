@@ -18,12 +18,12 @@ angular.module('beer.services', [])
       params: {listType: 'favorites',
               username: user,
               beer: beer},
-      url: '/api/addToList'
+      url: '/api/users/addToList'
     })
     .then(callback);
   };
 
-  var addToWish = function (user,  callback) {
+  var addToWish = function (user, beer, callback) {
     return $http({
       method: 'POST',
       params: {
