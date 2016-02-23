@@ -13,12 +13,11 @@ angular.module('beer.mylists', [])
     if (user == 'null'){
       $scope.noUser += 'Please register an account with us to create your own lists.';
     } else {
-    }
-      console.log('not null');
       BeerLists.getLists(user,function(resp){
         $scope.lists.favorites = resp.data.favorites;
         $scope.lists.wishlist = resp.data.wishlist;
       });
+    }
   }
 
   initialize(user);
