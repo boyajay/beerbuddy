@@ -10,14 +10,17 @@ angular.module('beer.mylists', [])
   };
 
   var user = $window.localStorage.user;
-  console.log('user is ', user);
-  if (user){
-    BeerLists.getLists(user,function(resp){
-      console.log('resp to getMyLists is ', resp);
-      $scope.lists.favorites = resp.data.favorites; //JSON.parse(resp.data)
-      $scope.lists.wishlist = resp.data.wishlist;
-    });
-  } else {
-    $scope.noUser = 'Please register an account with us to create your own lists.';
+  var initialize = function (user){
+    if (user){
+      BeerLists.getLists(user,function(resp){
+        console.log('resp to getMyLists is ', resp);
+        $scope.lists.favorites = resp.data.favorites;
+        $scope.lists.wishlist = resp.data.wishlist;
+      });
+    } else {
+      $scope.noUser = 'Please register an account with us to create your own lists.';
+    }
   }
+
+  initialize(user);
 });

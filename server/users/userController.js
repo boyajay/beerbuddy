@@ -5,7 +5,6 @@ var http = require('http');
 var BreweryDb = require('brewerydb-node');
 var request = require('request');
 
-// Promisify a few mongoose methods with the `q` promise library
 var findUser = Q.nbind(User.findOne, User);
 var updateUser= Q.nbind(User.update, User);
 var createUser = Q.nbind(User.create, User);

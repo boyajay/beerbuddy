@@ -44,15 +44,6 @@ angular.module('beer.beers', [])
       console.log('signing out');
       Auth.signout();
     };
-      
-      // .then(function(val){console.log(val);
-      //   $scope.dataObj = val;
-      //   $scope.dataObj = val; 
-      //   console.log("returned result is ",   $scope.selection2);
-      //   console.log("or returned result is ",   $scope.dataObj);
-      // })
-      // .catch(function(){console.log('shit fucked up')});
-
     $scope.dropboxitemselected = function () {
     	console.log("function called!");
         alert("drop box item selected");

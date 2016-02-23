@@ -1,7 +1,7 @@
 {
   "name": "shortly-angular",
-  "version": "0.0.0",
-  "authors": [],
+  "version": "0.1.0",
+  "authors": ["Boya Jiang"],
   "license": "MIT",
   "ignore": [
     "**/.*",

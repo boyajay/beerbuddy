@@ -1,15 +1,8 @@
 {
-  "name": "shortly-angular",
-  "version": "1.1.0",
-  "description": "Build out the front end of a MEAN stack app",
-  "author": "Hack Reactor <curriculum.team@hackreactor.com>",
-  "contributors": [
-    "Scott Moss",
-    "Josh Wyatt <josh.wyatt@hackreactor.com>",
-    "Dan Thareja <dan.thareja@hackreactor.com>",
-    "Fred Zirdung <fred@hackreactor.com>",
-    "Phillip Alexander <phillip@hackreactor.com>"
-  ],
+  "name": "Beer Buddy",
+  "version": "0.1.0",
+  "description": "full stack web app that helps users sort through beers by type, and keep lists of their favorites and their wishlist",
+  "author": "Boya Jiang <jiang.boya@yahoo.com>",
   "scripts": {
     "test": "gulp karma",
     "start": "gulp",
@@ -18,10 +11,10 @@
   "pre-commit": "lint",
   "repository": {
     "type": "git",
-    "url": "http://github.com/hackreactor-labs/sprint.shortly-angular.git"
+    "url": "http://github.com/boyajay/beerbuddy.git"
   },
   "bugs": {
-    "url": "https://github.com/hackreactor-labs/sprint.shortly-angular/issues"
+    "url": "http://github.com/boyajay/beerbuddy/issues"
   },
   "license": "UNLICENSED",
   "private": true,
