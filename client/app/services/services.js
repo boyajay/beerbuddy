@@ -120,11 +120,13 @@ angular.module('beer.services', [])
 
 
   var isAuth = function () {
-    return !!$window.localStorage.getItem('com.shortly');
+    return !!$window.localStorage.getItem('com.beers');
   };
 
   var signout = function () {
-    $window.localStorage.removeItem('com.shortly');
+    $window.localStorage.removeItem('com.beers');
+    $window.localStorage.user = null;
+    console.log('localStorage user is ', $window.localStorage.user);
     $location.path('/signin');
   };
 

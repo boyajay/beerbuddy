@@ -1,6 +1,7 @@
 <div id='signup'>
 <br>
   <h2 style="color: #eeeeee; font-family: Verdana; font-weight: bolder">Sign Up</h1>
+  <div><b> {{errormsg}} </b><div>
   <form name="signupForm" ng-submit='signup()'>
      <input type='text'ng-model='user.username' style='border-radius: 8px;'> USERNAME
     <input type="password" ng-model='user.password' style='border-radius: 8px;'> PASSWORD
