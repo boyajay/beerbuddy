@@ -15,18 +15,6 @@ a {
   text-decoration: none;
 }
 
-h1 {
-  font-size: 5em;
-  color: #ffa31a;
-  font-style: italic;
-  margin: 25px 0 10px 0px;
-  font-family: 'Chewy', cursive;
-  background: -webkit-linear-gradient(#ffffff, #cc7a00);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke-width: 3px;
-  -webkit-text-stroke-color: black;
-}
 select {
   color: #222222;
   height: 30px;
@@ -57,6 +45,19 @@ select {
   position: fixed;
   right: 0;
   top: 0;
+}
+
+.logo {
+  font-size: 5em;
+  color: #ffa31a;
+  font-style: italic;
+  margin: 25px 0 10px 0px;
+  font-family: 'Chewy', cursive;
+  background: -webkit-linear-gradient(#ffffff, #cc7a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 3px;
+  -webkit-text-stroke-color: black;
 }
 
 .navigation {
