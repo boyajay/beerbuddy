@@ -9,14 +9,16 @@ angular.module('beer.mylists', [])
 
   var user = $window.localStorage.user;
   var initialize = function (user){
-    if (user){
+    
+    if (user == 'null'){
+      $scope.noUser += 'Please register an account with us to create your own lists.';
+    } else {
+    }
+      console.log('not null');
       BeerLists.getLists(user,function(resp){
         $scope.lists.favorites = resp.data.favorites;
         $scope.lists.wishlist = resp.data.wishlist;
       });
-    } else {
-      $scope.noUser = 'Please register an account with us to create your own lists.';
-    }
   }
 
   initialize(user);
