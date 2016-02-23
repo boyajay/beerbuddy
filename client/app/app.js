@@ -7,9 +7,6 @@ angular.module('beer', [
   'beer.mylists'
 ])
 .config(function ($routeProvider, $httpProvider) {
-  $httpProvider.defaults.useXDomain = true;
-  $httpProvider.defaults.withCredentials = true;
-  delete $httpProvider.defaults.headers.common['X-Requested-With'];
   $routeProvider
     .when('/beers', {
       templateUrl: 'app/beers/beers.html',

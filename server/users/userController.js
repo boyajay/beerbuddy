@@ -13,16 +13,12 @@ module.exports = {
   getBeerCats: function(req, res, next){
 
     var url = "http://api.brewerydb.com/v2" + req.query.params + "key=6e28403bdda7e4fe5afbab08bbc77475";
-    console.log("url::::::::::: ", url );
     request(url, function(error, response, body) {
-      console.log(body);
       res.json(body);
     });
   },
 
   addToList: function(req, res, next){
-    console.log('LISTTYPE IS ---------------', req.query.listType);
-    console.log('USERNAME IS ---------------', req.query.username);
     if (req.query.listType === 'wishlist'){
       updateUser({username:req.query.username}, {$push: {wishlist: req.query.beer}});    
       res.end();
@@ -33,7 +29,6 @@ module.exports = {
   },
 
   getLists: function(req, res, next){
-    console.log('requested name is ', req.query.username);
     findUser({username:req.query.username})
     .then(function (doc) {
       res.json(doc);

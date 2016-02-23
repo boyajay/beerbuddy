@@ -3,7 +3,6 @@ angular.module('beer.services', [])
   var  favorites= [];
     var  wishlist= [];
   var getList = function (path, callback) {
-    console.log('path being passed in is ', path);
     path = path || '';
     return $http({
       method: 'GET',
@@ -12,15 +11,14 @@ angular.module('beer.services', [])
     })
     .then(callback);
   };
-  var addToFav = function (user, beer, callback) {
+  var addToFav = function (user, beer) {
     return $http({
       method: 'POST',
       params: {listType: 'favorites',
               username: user,
               beer: beer},
       url: '/api/users/addToList'
-    })
-    .then(callback);
+    });
   };
 
   var addToWish = function (user, beer, callback) {
@@ -32,8 +30,7 @@ angular.module('beer.services', [])
                 beer: beer
               },
       url: '/api/users/addToList'
-    })
-    .then(callback);
+    });
   };
 
   var getLists = function (user, callback) {
@@ -89,7 +86,6 @@ angular.module('beer.services', [])
   var signout = function () {
     $window.localStorage.removeItem('com.beers');
     $window.localStorage.user = null;
-    console.log('localStorage user is ', $window.localStorage.user);
     $location.path('/signin');
   };
 
